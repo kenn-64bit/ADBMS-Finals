@@ -7,7 +7,7 @@
   <link href="../input.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="bg-gray-100 shadow py-3">
+  <nav class="sticky top-0 bg-gray-100 shadow py-3 z-50">
     <div class="flex items-center justify-between px-28">
       <!-- Logo on the left -->
       <div class="flex items-center shrink-0">
@@ -31,20 +31,20 @@
     </div>
   </nav>
 
-   <section class="relative h-screen flex items-center justify-center hero-bg">
-        <div class="hero-gradient absolute inset-0"></div>
-        <div class="relative z-10 text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 max-w-4xl mx-auto leading-tight">
-                Adventures are written for those who seek the unknown
-            </h1>
-            <p class="text-lg md:text-xl mb-8 opacity-90">
-                Hit the comforts of our vehicles
-            </p>
-            <button class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors">
-                A button
-            </button>
-        </div>
-    </section>
+    <section class="relative h-screen flex items-center justify-center hero-bg bg-cover bg-center bg-no-repeat" style="background-image: url('../img/home_page\ .png');">
+          <div class="hero-gradient absolute inset-0"></div>
+          <div class="relative z-10 text-center px-4">
+              <h1 class="text-4xl md:text-6xl font-bold mb-4 max-w-4xl mx-auto leading-tight">
+                  Adventures are written for those who seek the unknown
+              </h1>
+              <p class="text-lg md:text-xl mb-8 opacity-90">
+                  Hit the comforts of our vehicles
+              </p>
+              <button class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors">
+                  A button
+              </button>
+          </div>
+      </section>
 
     <!-- Story Section -->
     <section class="bg-blue-900 py-16 md:py-24">
@@ -155,7 +155,128 @@
             </div>
           </div>
         </div>
-    </section>
+     </section>
+
+     <section class="bg-blue-900">
+
+        <div class="text-center mb-4">
+          <h2 class="text-3xl md:text-4xl font-bold">Support</h2>
+        </div>
+        <div class="w-full max-w-2xl mx-auto space-y-6 py-12">
+            <!-- Accordion 1 -->
+            <div class="bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+                <div class="accordion-header flex items-center justify-between p-4 cursor-pointer hover:bg-gray-200 transition-colors" onclick="toggleAccordion(1)">
+                    <span class="text-gray-800 font-medium">Processe(s) in car rentals</span>
+                    <svg id="arrow-1" class="w-5 h-5 text-gray-600 transform transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div id="content-1" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="p-4 bg-gray-200 text-gray-700">
+                        <p>The car rental process typically involves several key steps: customer registration, vehicle selection, documentation verification, payment processing, vehicle inspection, and rental agreement signing. Each step ensures a smooth and secure rental experience for both the customer and the rental company.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion 2 -->
+            <div class="bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+                <div class="accordion-header flex items-center justify-between p-4 cursor-pointer hover:bg-gray-200 transition-colors" onclick="toggleAccordion(2)">
+                    <span class="text-gray-800 font-medium">Lorem ipsum dolor innit ipis giraffe elephant giant golem barbarian</span>
+                    <svg id="arrow-2" class="w-5 h-5 text-gray-600 transform transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div id="content-2" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="p-4 bg-gray-200 text-gray-700">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <br>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion 3 -->
+            <div class="bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+                <div class="accordion-header flex items-center justify-between p-4 cursor-pointer hover:bg-gray-200 transition-colors" onclick="toggleAccordion(3)">
+                    <span class="text-gray-800 font-medium">Processe(s) in car rentals</span>
+                    <svg id="arrow-3" class="w-5 h-5 text-gray-600 transform transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div id="content-3" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="p-4 bg-gray-200 text-gray-700">
+                        <p>Short content example.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion 4 -->
+            <div class="bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+                <div class="accordion-header flex items-center justify-between p-4 cursor-pointer hover:bg-gray-200 transition-colors" onclick="toggleAccordion(4)">
+                    <span class="text-gray-800 font-medium">Processe(s) in car rentals</span>
+                    <svg id="arrow-4" class="w-5 h-5 text-gray-600 transform transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div id="content-4" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="p-4 bg-gray-200 text-gray-700">
+                        <p>This is a medium-length content example that demonstrates how the accordion expands based on the content length. The height adjusts automatically to accommodate the text, ensuring that all content is properly displayed without any overflow issues.</p>
+                        <ul class="mt-3 list-disc list-inside space-y-1">
+                            <li>Feature one of the rental service</li>
+                            <li>Feature two with additional details</li>
+                            <li>Feature three for comprehensive coverage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+
+
+     <footer>
+      <div class="h-64 relative bg-slate-950 overflow-hidden">
+        <div class="w-48 h-32 left-[151px] top-[67.41px] absolute border-r-[3.11px] border-white overflow-hidden">
+            <img class="w-44 h-32 left-[4.67px] top-[-0.78px] absolute" src="https://placehold.co/173x125" />
+        </div>
+        <div class="w-96 left-[897px] top-[103px] absolute text-right justify-start text-neutral-200 text-xl font-semibold font-['Plus_Jakarta_Sans'] tracking-[4.38px]">C 2025 All Rights Reserved | INNSPIRE</div>
+        <div class="w-96 h-6 left-[370px] top-[103px] absolute">
+            <div class="w-14 left-0 top-0 absolute text-center justify-start text-neutral-200 text-xl font-semibold font-['Plus_Jakarta_Sans']">Home</div>
+            <div class="w-24 left-[77.50px] top-0 absolute text-center justify-start text-neutral-200 text-xl font-semibold font-['Plus_Jakarta_Sans']">AboutUs</div>
+            <div class="w-24 left-[190.99px] top-0 absolute text-center justify-start text-neutral-200 text-xl font-semibold font-['Plus_Jakarta_Sans']">Vehicles</div>
+            <div class="w-24 left-[304.48px] top-0 absolute text-center justify-start text-neutral-200 text-xl font-semibold font-['Plus_Jakarta_Sans']">Support</div>
+        </div>
+      </div>
+     </footer>
+
+     <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(`content-${id}`);
+            const arrow = document.getElementById(`arrow-${id}`);
+            
+            // Check if currently open
+            const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+            
+            // Close all other accordions
+            for (let i = 1; i <= 4; i++) {
+                if (i !== id) {
+                    const otherContent = document.getElementById(`content-${i}`);
+                    const otherArrow = document.getElementById(`arrow-${i}`);
+                    otherContent.style.maxHeight = '0px';
+                    otherArrow.style.transform = 'rotate(0deg)';
+                }
+            }
+            
+            // Toggle current accordion
+            if (isOpen) {
+                content.style.maxHeight = '0px';
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                // Set max-height to scrollHeight to allow natural expansion
+                content.style.maxHeight = content.scrollHeight + 'px';
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
 
 </body>
 </html>
