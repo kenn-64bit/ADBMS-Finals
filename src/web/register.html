@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../output.css" rel="stylesheet">
+    <link href="../input.css" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen relative bg-teal-950 overflow-hidden py-8">
+    <!-- Background blur elements -->
+    <div class="w-96 h-80 left-[-200px] top-[-20px] absolute origin-top-left rotate-[-21.23deg] bg-blue-900/30 rounded-full blur-[113.83px]"></div>
+    <div class="w-80 h-60 left-[200px] top-[500px] absolute origin-top-left rotate-[-7.14deg] bg-blue-900/75 rounded-full blur-[83.11px]"></div>
+    <div class="w-64 h-80 left-[400px] top-[-50px] absolute origin-top-left rotate-[-9.56deg] bg-blue-900/50 rounded-full blur-[113.83px]"></div>
+    
+    <!-- Main content container -->
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+        
+        <!-- Form container -->
+        <div class="flex flex-col lg:flex-row gap-8 items-center mt-12">
+            <!-- Image -->
+            <div class="flex-shrink-0">
+                <img class="w-80 h-96 object-cover rounded-lg" src="https://placehold.co/320x384" alt="Registration" />
+            </div>
+            
+            <!-- Form fields -->
+            <div class="flex-1 w-full max-w-md space-y-5">
+
+                <div class="text-left mb-8">
+                    <h1 class="text-4xl md:text-6xl font-semibold text-white">Register</h1>
+                </div>
+
+                <!-- First Name and Last Name -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-white text-base font-normal font-['0xProto'] mb-2">First Name</label>
+                        <input type="text" class="w-full h-10 bg-zinc-300 rounded-xl px-4" />
+                    </div>
+                    <div>
+                        <label class="block text-white text-base font-normal font-['0xProto'] mb-2">Last Name</label>
+                        <input type="text" class="w-full h-10 bg-zinc-300 rounded-xl px-4" />
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div>
+                    <label class="block text-white text-lg font-normal font-['0xProto'] mb-2">Email</label>
+                    <input type="email" class="w-full h-10 bg-zinc-300 rounded-xl px-4" />
+                </div>
+                
+                <!-- Birthdate -->
+                <div>
+                    <label class="block text-white text-lg font-normal font-['0xProto'] mb-2">Birthdate</label>
+                    <input type="date" class="w-full h-10 bg-zinc-300 rounded-xl px-4" />
+                </div>
+                
+                <!-- Password -->
+                <div>
+                    <label class="block text-white text-lg font-normal font-['0xProto'] mb-2">Password</label>
+                    <input type="password" class="w-full h-10 bg-zinc-300 rounded-xl px-4" />
+                </div>
+                
+                <!-- Re-enter Password -->
+                <div>
+                    <label class="block text-white text-lg font-normal font-['0xProto'] mb-2">Re-enter Password</label>
+                    <input type="password" class="w-full h-10 bg-zinc-300 rounded-xl px-4" />
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="pt-4">
+                    <button class="w-full h-16 bg-red-900 rounded-xl text-white text-xl font-normal font-['0xProto'] hover:bg-red-800 transition-colors">
+                        create account
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
