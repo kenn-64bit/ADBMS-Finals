@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../output.css" rel="stylesheet">
+  <link href="../input.css" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen relative bg-teal-950 overflow-hidden flex items-center justify-center">
+        <!-- Background blur elements -->
+        <div class="w-[1001px] h-[641px] left-[-522px] top-[-43.56px] absolute origin-top-left rotate-[-21.23deg] bg-blue-900/30 rounded-full blur-[113.83px]"></div>
+        <div class="w-[846px] h-[468px] left-[271px] top-[1117.17px] absolute origin-top-left rotate-[-7.14deg] bg-blue-900/75 rounded-full blur-[83.11px]"></div>
+        <div class="w-[641px] h-[784px] left-[1010px] top-[-90.56px] absolute origin-top-left rotate-[-9.56deg] bg-blue-900/50 rounded-full blur-[113.83px]"></div>
+        
+        <!-- Centered form container -->
+        <div class="relative z-10 w-full max-w-md px-4">
+            <!-- Login title -->
+            <div class="text-center mb-8">
+                <h1 class="text-6xl font-semibold text-white font-['Plus_Jakarta_Sans']">Login</h1>
+            </div>
+            
+            <!-- Image -->
+            <div class="flex justify-center mb-8">
+                <img class="w-96 h-72 object-cover rounded-lg" src="https://placehold.co/396x286" alt="Login" />
+            </div>
+            
+            <!-- Login form -->
+            <form class="space-y-6">
+                <!-- Email field -->
+                <div>
+                    <label class="block text-white text-xl font-normal font-['0xProto'] mb-2">Email</label>
+                    <input 
+                        type="email" 
+                        name="email"
+                        required
+                        class="w-full h-11 bg-zinc-300 rounded-xl px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your email"
+                    />
+                </div>
+                
+                <!-- Password field -->
+                <div>
+                    <label class="block text-white text-xl font-normal font-['0xProto'] mb-2">Password</label>
+                    <input 
+                        type="password" 
+                        name="password"
+                        required
+                        class="w-full h-11 bg-zinc-300 rounded-xl px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your password"
+                    />
+                </div>
+                
+                <!-- Login button -->
+                <div class="pt-4">
+                    <button 
+                        type="submit"
+                        class="w-full h-16 bg-red-900 rounded-xl text-white text-xl font-normal font-['0xProto'] hover:bg-red-800 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500"
+                    >
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
