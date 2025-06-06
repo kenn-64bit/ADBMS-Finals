@@ -1,2 +1,6 @@
-
 @import "tailwindcss";
+
+*{
+    margin: 0;
+    font-family: "Plus Jakarta Sans";
+}
