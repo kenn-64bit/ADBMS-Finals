@@ -1,0 +1,48 @@
+Admin Dashboard Plan:
+
+~~
+Can Do:
+1. Add/Edit/Delete car/user information
+2. Confirm orders
+
+~~
+Fundamental features:
+
+1. Has search function, used to show a data in the table.
+    - text box is at the right in the <top> div, at the <section> semantic tag, which is inside the <article> semantic tag
+
+2. Has table showing cars, users, and confirmed rental orders
+    - table at the <lower> div part inside <section> tag, which is inside the <article> semantic tag.
+    > includes edit & delete button function for cars and users.
+    > includes cancel button for confirmed rental orders (goes to pending rental orders page)
+
+3. Can Add & Edit Car/User information (separate page).
+    - add button is at the right of the tablename(i.e cars, users, confirmed rental orders) which is furthest on the left of <top> div, inside of the <section> tag, which is inside the <article> tag
+    flow:
+    (1)admin_dashboard.php -> (2)addUser_form.php -> (3)addUser_action.php -> (4)admin_dashboard.php
+    (1)admin_dashboard.php -> (2)addCar_form.php -> (3)addCar_action.php -> (4)admin_dashboard.php
+    (1)admin_dashboard.php -> (2)editUser_form.php -> (3)editUser_action.php -> (4)admin_dashboard.php
+    (1)admin_dashboard.php -> (2)editCar_form.php -> (3)editUser_action.php -> (4)admin_dashboard.php
+
+        where:
+        1 - the page where the process starts
+        2 - the page where you place inputs; error handling
+        3 - the page that process the inputs; sql operations
+        4 - the page where the process ends
+
+4. Can confirm orders (pending rental orders page).
+
+    flow:
+    (1)admin_dashboard.php -> (2)pendingOrders.php -> (3)admin_dashboard.php
+
+        where:
+        1 - the page where process starts
+        2 - shows orders like a receipt, where you can discard or confirm orders
+        3 - the page where process ends
+
+~~
+Addons features:
+1. Analytics about...
+ a. Total amount of users exists
+ b. Total amount of confirmed orders
+ c. Total amount of pending orders
