@@ -1,0 +1,18 @@
+// src/scss/main.scss
+
+// Import FontAwesome SCSS
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+
+// Custom variables (before Bulma import)
+@import "custom";
+
+// Import Bulma
+@import "../../node_modules/bulma/bulma";
+
+// Your custom styles
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
