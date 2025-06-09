@@ -27,7 +27,9 @@ Fundamental features:
         where:
         1 - the page where the process starts
         2 - the page where you place inputs; error handling
-        3 - the page that process the inputs; sql operations
+            > for user, only userfname, userlname, userpassword, useremail, userphonenumber can be edited
+            > for car, only brand, model, size, platenum, description, and availaibility(toggle to yes-1 or no-0) can be edited
+        3 - the page that process the inputs; sql operations, then redirects to admin_dashboard
         4 - the page where the process ends
 
 4. Can confirm orders (pending rental orders page).
@@ -36,10 +38,20 @@ Fundamental features:
     (1)admin_dashboard.php -> (2)pendingOrders.php -> (3)admin_dashboard.php
 
         where:
-        1 - the page where process starts
-        2 - shows orders like a receipt, where you can discard or confirm orders
+        1 - the page where process starts... clicks the option 'Orders' in the sidebar
+        2 - shows orders like a receipt, where you can discard or confirm orders... clicks confirm and redirects to admin_dashboard
         3 - the page where process ends
 
+Note:
+5. Delete flow
+    for user: (1)admin_dashboard.php -> (2)deleteUser.php -> (3)admin_dashboard.php
+    for car: (1)admin_dashboard.php -> (2)deleteCar.php -> (3)admin_dashboard.php
+
+        where:
+        1 - the page where process starts... clicks the delete button respectively
+        2 - action page to process deletion (sql), redirects to admin_dashboard
+        3 - the page where process ends
+        
 ~~
 Addons features:
 1. Analytics about...

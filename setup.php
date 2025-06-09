@@ -31,6 +31,7 @@ try {
         userlName VARCHAR(50) NOT NULL,
         userEmail VARCHAR(100) NOT NULL UNIQUE,
         userPassword VARCHAR(255) NOT NULL,
+        userPhoneNum VARCHAR(50) NOT NULL,
         isAdmin TINYINT(1) DEFAULT 0,
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -41,25 +42,11 @@ try {
     }
     echo "Table 'User' created or already exists.<br>";
 
-    //Create Orders table if not exists
-    $sql = "CREATE TABLE IF NOT EXISTS `Orders` (
-        orderID INT AUTO_INCREMENT PRIMARY KEY,
-        userID INT NOT NULL,
-        carID INT NOT NULL,
-        orderDescription VARCHAR(100),
-        dispatchDate DATE NOT NULL,
-        returnDate DATE NOT NULL,
-        isConfirmed TINYINT(1) DEFAULT 0,
-        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (userID) REFERENCES User(userID),
-        FOREIGN KEY (carID) REFERENCES Car(carID),
-        CHECK (returnDate > dispatchDate)
-    ) ENGINE=InnoDB";
-    
-    if (!$conn->query($sql)) {
-        throw new Exception("Error creating Orders table: " . $conn->error);
-    }
-    echo "Table 'Rental' created or already exists.<br>";
+        // Insert default super admin if not exists
+        $sql = "INSERT IGNORE INTO User (userfName, userlName, userEmail, userPassword, userPhoneNum, isAdmin) 
+                VALUES ('Super', 'Admin', 'admin@example.com', '" . password_hash('admin123', PASSWORD_DEFAULT) . "', '09999999999', 1)";
+        $conn->query($sql);
+
 
     //Create Car table if not exists
     $sql = "CREATE TABLE IF NOT EXISTS `Car` (
@@ -79,10 +66,42 @@ try {
     }
     echo "Table 'Car' created or already exists.<br>";
 
+    //Create Orders table if not exists
+    $sql = "CREATE TABLE IF NOT EXISTS `Orders` (
+        orderID INT AUTO_INCREMENT PRIMARY KEY,
+        userID INT NOT NULL,
+        carID INT NOT NULL,
+        orderDescription VARCHAR(100),
+        dispatchDate DATE NOT NULL,
+        returnDate DATE NOT NULL,
+        isConfirmed TINYINT(1) DEFAULT 0,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (userID) REFERENCES User(userID),
+        FOREIGN KEY (carID) REFERENCES Car(carID),
+        CHECK (returnDate > dispatchDate)
+    ) ENGINE=InnoDB";
+    
+    if (!$conn->query($sql)) {
+        throw new Exception("Error creating Orders table: " . $conn->error);
+    }
+    echo "Table 'Orders' created or already exists.<br>";
+
+        // Insert a sample car
+        $conn->query("INSERT IGNORE INTO Car (carBrand, carModel, carSize, carPlateNum, carDescription, dailyRate, isAvailable) VALUES ('Toyota', 'Vios', 'Small', 'ABC1234', 'Economy car', 1000.00, 1)");
+
+        // Get inserted car/user IDs
+        $carID = $conn->insert_id;
+        $userID = $conn->insert_id;
+
+        // Insert sample pending and confirmed orders
+        $conn->query("INSERT INTO Orders (userID, carID, orderDescription, dispatchDate, returnDate, isConfirmed) VALUES (1, 1, 'Test pending order', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 3 DAY), 0)");
+        $conn->query("INSERT INTO Orders (userID, carID, orderDescription, dispatchDate, returnDate, isConfirmed) VALUES (1, 1, 'Test confirmed order', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 3 DAY), 1)");
+
+
     $conn->close();
     header("Location: admin_dashboard.php?setup=success");
     exit();
-    
+
 } catch (Exception $e) {
     die("Error: " . $e->getMessage());
 }
