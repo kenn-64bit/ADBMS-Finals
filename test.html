@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="/node_modules/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <title>Car Rentals - Adventures Await</title>
+    <style>
+        :root {
+            --primary-blue: #1e3a5f;
+            --dark-blue: #0f1419;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/placeholder.svg?height=800&width=1200');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .story-section {
+            background: var(--primary-blue);
+            color: white;
+            padding: 6rem 0;
+        }
+
+        .story-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .story-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .image-placeholder {
+            background: white;
+            border-radius: 8px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        .large-placeholder {
+            min-height: 400px;
+        }
+
+        .vehicles-section {
+            background: var(--dark-blue);
+            color: white;
+            padding: 6rem 0;
+        }
+
+        .vehicles-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+
+        .vehicle-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .vehicle-image {
+            background: white;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+        }
+
+        .vehicle-info {
+            padding: 1.5rem;
+        }
+
+        .vehicle-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .vehicle-specs {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .faq-section {
+            background: var(--dark-blue);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .faq-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-content {
+            padding: 0 1.5rem 1.5rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-content {
+            display: block;
+        }
+
+        .footer-section {
+            background: var(--dark-blue);
+            color: white;
+            padding: 3rem 0 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .navbar {
+            background: transparent;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .navbar-brand img {
+            max-height: 40px;
+        }
+
+        .navbar-item {
+            color: white !important;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-blue);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .story-section {
+                padding: 4rem 0;
+            }
+            
+            .story-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+            
+            .story-text {
+                font-size: 0.95rem;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            
+            .vehicles-section {
+                padding: 4rem 0;
+            }
+            
+            .vehicles-title {
+                font-size: 2rem;
+            }
+            
+            .vehicle-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .vehicle-specs {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .faq-section {
+                padding: 3rem 0;
+            }
+            
+            .faq-header {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .faq-content {
+                padding: 0 1rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .footer-section {
+                padding: 2rem 0 1rem;
+            }
+            
+            .footer-section .columns {
+                text-align: center;
+            }
+            
+            .footer-section .column.has-text-right {
+                text-align: center !important;
+                margin-top: 1rem;
+            }
+            
+            .image-placeholder {
+                min-height: 250px;
+                margin-bottom: 2rem;
+            }
+            
+            .large-placeholder {
+                min-height: 300px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+            }
+            
+            .btn-primary {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .story-title {
+                font-size: 1.8rem;
+            }
+            
+            .vehicles-title {
+                font-size: 1.8rem;
+            }
+            
+            .vehicle-info {
+                padding: 1rem;
+            }
+            
+            .vehicle-name {
+                font-size: 1.1rem;
+            }
+            
+            .vehicle-specs {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Mobile UX Improvements - Add proper margins and padding */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .story-section .container {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+            
+            .vehicles-section .container {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+            
+            .faq-section .container {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+            
+            .footer-section .container {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+            
+            .vehicle-card {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+            
+            .image-placeholder {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+            
+            .faq-item {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .hero-content {
+                padding: 0 1.5rem;
+            }
+            
+            .story-section .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .vehicles-section .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .faq-section .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .footer-section .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .vehicle-card {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .image-placeholder {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .faq-item {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            /* Ensure footer links have proper spacing on mobile */
+            .footer-section .is-flex a {
+                margin-right: 1rem !important;
+                margin-bottom: 0.5rem;
+            }
+            
+            .footer-section .is-flex {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Navbar mobile styles */
+        .navbar-menu {
+            background-color: rgba(30, 58, 95, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-burger {
+            color: white;
+        }
+
+        .navbar-burger:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-burger.is-active span:nth-child(1) {
+            transform: translateY(5px) rotate(45deg);
+        }
+
+        .navbar-burger.is-active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-burger.is-active span:nth-child(3) {
+            transform: translateY(-5px) rotate(-45deg);
+        }
+
+        @media screen and (max-width: 1023px) {
+            .navbar-menu {
+                display: none;
+            }
+            
+            .navbar-menu.is-active {
+                display: block;
+            }
+            
+            .navbar-item {
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .navbar-item:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar is-transparent">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item">
+                    <i class="fas fa-car" style="font-size: 1.5rem; color: white;"></i>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true" style="background-color: white;"></span>
+                    <span aria-hidden="true" style="background-color: white;"></span>
+                    <span aria-hidden="true" style="background-color: white;"></span>
+                </a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item">Home</a>
+                    <a class="navbar-item">About Us</a>
+                    <a class="navbar-item">Vehicles</a>
+                    <a class="navbar-item">Support</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Adventures are written for those who seek the unknown</h1>
+                <p class="hero-subtitle">At the comforts of our vehicles</p>
+                <a href="#" class="btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 1 -->
+    <section class="story-section">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-half">
+                    <h2 class="story-title">A Car Rentals Story</h2>
+                    <p class="story-text">
+                        Lorem ipsum dolor sit amet consectetur id elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat elit.
+                    </p>
+                </div>
+                <div class="column is-half">
+                    <div class="image-placeholder large-placeholder">
+                        [Image Placeholder - Replace with Story Image]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 2 -->
+    <section class="story-section">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-half">
+                    <div class="image-placeholder large-placeholder">
+                        [Image Placeholder - Replace with Story Image]
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <h2 class="story-title">A Car Rentals Story</h2>
+                    <p class="story-text">
+                        Lorem ipsum dolor sit amet consectetur id elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles Section -->
+    <section class="vehicles-section">
+        <div class="container">
+            <div class="has-text-centered">
+                <p class="is-size-6 has-text-weight-light mb-2">Trusted Penguin Dealerships</p>
+                <h2 class="vehicles-title">Explore Vehicles</h2>
+            </div>
+            
+            <div class="columns is-multiline">
+                <!-- Vehicle Card 1 -->
+                <div class="column is-4">
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            [Car Image Placeholder]
+                        </div>
+                        <div class="vehicle-info">
+                            <h3 class="vehicle-name">Porsche 911 GT3RS</h3>
+                            <div class="vehicle-specs">
+                                <span><i class="fas fa-users"></i> 2</span>
+                                <span><i class="fas fa-cog"></i> Manual</span>
+                                <span><i class="fas fa-gas-pump"></i> 18L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 2 -->
+                <div class="column is-4">
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            [Car Image Placeholder]
+                        </div>
+                        <div class="vehicle-info">
+                            <h3 class="vehicle-name">Porsche 911 GT3RS</h3>
+                            <div class="vehicle-specs">
+                                <span><i class="fas fa-users"></i> 2</span>
+                                <span><i class="fas fa-cog"></i> Manual</span>
+                                <span><i class="fas fa-gas-pump"></i> 18L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 3 -->
+                <div class="column is-4">
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            [Car Image Placeholder]
+                        </div>
+                        <div class="vehicle-info">
+                            <h3 class="vehicle-name">Porsche 911 GT3RS</h3>
+                            <div class="vehicle-specs">
+                                <span><i class="fas fa-users"></i> 2</span>
+                                <span><i class="fas fa-cog"></i> Manual</span>
+                                <span><i class="fas fa-gas-pump"></i> 18L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 4 -->
+                <div class="column is-4">
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            [Car Image Placeholder]
+                        </div>
+                        <div class="vehicle-info">
+                            <h3 class="vehicle-name">Porsche 911 GT3RS</h3>
+                            <div class="vehicle-specs">
+                                <span><i class="fas fa-users"></i> 2</span>
+                                <span><i class="fas fa-cog"></i> Manual</span>
+                                <span><i class="fas fa-gas-pump"></i> 18L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 5 -->
+                <div class="column is-4">
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            [Car Image Placeholder]
+                        </div>
+                        <div class="vehicle-info">
+                            <h3 class="vehicle-name">Porsche 911 GT3RS</h3>
+                            <div class="vehicle-specs">
+                                <span><i class="fas fa-users"></i> 2</span>
+                                <span><i class="fas fa-cog"></i> Manual</span>
+                                <span><i class="fas fa-gas-pump"></i> 18L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 6 -->
+                <div class="column is-4">
+                    <div class="vehicle-card">
+                        <div class="vehicle-image">
+                            [Car Image Placeholder]
+                        </div>
+                        <div class="vehicle-info">
+                            <h3 class="vehicle-name">Porsche 911 GT3RS</h3>
+                            <div class="vehicle-specs">
+                                <span><i class="fas fa-users"></i> 2</span>
+                                <span><i class="fas fa-cog"></i> Manual</span>
+                                <span><i class="fas fa-gas-pump"></i> 18L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="faq-item active">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <span>Praesentium totam molestiae</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <span>Praesentium totam molestiae</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <span>Praesentium totam molestiae</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="is-flex is-align-items-center">
+                        <i class="fas fa-car mr-3" style="font-size: 2rem;"></i>
+                        <div>
+                            <div class="is-flex">
+                                <a href="#" class="mr-4">Home</a>
+                                <a href="#" class="mr-4">About Us</a>
+                                <a href="#" class="mr-4">Vehicles</a>
+                                <a href="#">Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6 has-text-right">
+                    <p class="is-size-7">© 2024 All Rights Reserved | INNOVATE</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+        
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+        
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+                // Add a click event on each of them
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        // Get the target from the "data-target" attribute
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+
+                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+
+            // Close mobile menu when clicking on a menu item
+            const $navbarItems = Array.prototype.slice.call(document.querySelectorAll('.navbar-item'), 0);
+            $navbarItems.forEach(el => {
+                el.addEventListener('click', () => {
+                    // Close mobile menu
+                    const $navbarBurger = document.querySelector('.navbar-burger');
+                    const $navbarMenu = document.querySelector('.navbar-menu');
+                
+                    if ($navbarBurger && $navbarMenu) {
+                        $navbarBurger.classList.remove('is-active');
+                        $navbarMenu.classList.remove('is-active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
