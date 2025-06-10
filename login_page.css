@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    background: linear-gradient(to right, #002b45, #042a48);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.login-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 66px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.car-icon {
+    margin-bottom: 40px;
+}
+
+.car-icon img {
+    width: 250px;
+    height: auto;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: white;
+}
+
+.input-group input {
+    background-color: #e5e5e5;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 15px 20px;
+    height: 60px;
+    font-family: 'Inconsolata', monospace;
+}
+
+.input-group input:focus {
+    outline: 2px solid #891e1e;
+}
+
+button[type="submit"] {
+    background-color: #891e1e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Inconsolata', monospace;
+    height: 60px;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #a82727;
+}
+
+.register-link {
+    color: #c4e1f2;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #c4e1f2;
+    text-decoration: underline;
+}
+
+.error-message {
+    background-color: #8B1538;
+    color: white;
+    font-size: 0.9rem;
+    margin: 0 0 20px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-family: 'Inconsolata', monospace;
+    width: 100%;
+}
+
+.error-message::before {
+    content: "⚠";
+    margin-right: 8px;
+    font-size: 1rem;
+    color: #FFD700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    
+    .car-icon img {
+        width: 180px;
+    }
+    
+    .input-group input {
+        height: 50px;
+    }
+    
+    button[type="submit"] {
+        height: 50px;
+    }
+}
