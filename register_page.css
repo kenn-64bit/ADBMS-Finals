@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    background: linear-gradient(to right, #002b45, #042a48);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.left-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-panel img {
+    width: 455px;
+    height: auto;
+    max-height: 607px;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 100px;
+}
+
+h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 66.54px;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: white;
+    font-family: 'Inconsolata', monospace;
+}
+
+.input-group input {
+    background-color: #e5e5e5;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 15px 20px;
+    height: 60px;
+    font-family: 'Inconsolata', monospace;
+}
+
+.input-group input:focus {
+    outline: 2px solid #891e1e;
+}
+
+/* RED BOX ERROR MESSAGE STYLING */
+.error-message {
+    background-color: #8B1538;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-family: 'Inconsolata', monospace;
+}
+
+.error-message::before {
+    content: "⚠";
+    margin-right: 8px;
+    font-size: 1rem;
+    color: #FFD700;
+}
+
+button[type="submit"] {
+    background-color: #891e1e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Inconsolata', monospace;
+    height: 60px;
+    margin-top: 10px;
+    text-transform: lowercase;
+}
+
+button[type="submit"]:hover {
+    background-color: #a82727;
+}
+
+.login-link {
+    color: #c4e1f2;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #c4e1f2;
+    text-decoration: underline;
+}
+
+/* Success Popup */
+.success-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0b5136;
+    color: #c7f2df;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    z-index: 1000;
+    animation: fadeInOut 5s forwards;
+}
+
+.success-popup a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-panel img {
+        width: 300px;
+        margin-top: 30px;
+    }
+    
+    .right-panel {
+        padding: 0 30px;
+        margin-bottom: 50px;
+    }
+    
+    h1 {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .input-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+}
