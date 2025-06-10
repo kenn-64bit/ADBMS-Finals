@@ -1,0 +1,133 @@
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "custom";
+@import "../../node_modules/bulma/bulma";
+
+body {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.booking-container {
+    background: rgba(30, 58, 95, 0.95);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.car-image-placeholder {
+    background: #ffffff;
+    border-radius: 8px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.booking-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.field label {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.input, .select select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input:focus, .select select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 0.125em rgba(76, 175, 80, 0.25);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+}
+
+.checkbox-container label {
+    color: #b8d4f0;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.price-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.price-amount {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.price-label {
+    color: #b8d4f0;
+    font-size: 0.9rem;
+}
+
+.book-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.book-button:hover {
+    background: #45a049;
+}
+
+@media (max-width: 768px) {
+    .booking-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .car-image-placeholder {
+        min-height: 150px;
+    }
+    
+    .price-amount {
+        font-size: 1.5rem;
+    }
+}
