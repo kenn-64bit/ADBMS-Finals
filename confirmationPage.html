@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - Subaru WRX</title>
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="/node_modules/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="src/scss/css/confirmation.css">
+</head>
+<body>
+    <div class="container">
+        <div class="booking-container">
+            <div class="columns is-variable is-6">
+                <div class="column is-4">
+                    <!-- Placeholder for car image - easily replaceable -->
+                    <div class="car-image-placeholder">
+                        <span><img src="rx7.jpg"></span>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Type</label>
+                        <label class="label">Sedan</label>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Transsmisson</label>
+                        <label class="label">Automatic</label>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Seating Capacity</label>
+                        <label class="label">1000</label>
+                    </div>
+
+                </div>
+                
+                <div class="column is-8">
+                    <div class="booking-title">Booking</div>
+                    
+                    <form action="confirm-booking.php" method="POST" id="confirmationForm">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">First Name</label>
+                                    <div class="control">
+                                        <input class="input" type="text" name="first_name" placeholder="Enter first name" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Last Name</label>
+                                    <div class="control">
+                                        <input class="input" type="text" name="last_name" placeholder="Enter last name" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input class="input" type="email" name="email" placeholder="Enter email address" required>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Phone No.</label>
+                            <div class="control">
+                                <input class="input" type="tel" name="phone" placeholder="Enter phone number" required>
+                            </div>
+                        </div>
+                        
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Car Short Rent</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select name="short_rent" required>
+                                                <option value="">Select Duration</option>
+                                                <option value="1_day">1 Day</option>
+                                                <option value="3_days">3 Days</option>
+                                                <option value="1_week">1 Week</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Day End Rent</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select name="end_rent" required>
+                                                <option value="">Select End Date</option>
+                                                <option value="today">Today</option>
+                                                <option value="tomorrow">Tomorrow</option>
+                                                <option value="custom">Custom Date</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="terms" name="terms_conditions" required>
+                            <label for="terms">I agree to terms and conditions</label>
+                        </div>
+                        
+                        <div class="price-section">
+                            <div class="price-amount">PHP 1700</div>
+                            <div class="price-label">Total Rental Cost</div>
+                        </div>
+                        
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="book-button">Book now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

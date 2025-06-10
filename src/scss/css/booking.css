@@ -1,0 +1,87 @@
+
+body {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.booking-container {
+    background: rgba(30, 58, 95, 0.95);
+    padding: 2rem;
+    margin: auto;
+}
+
+.car-image-placeholder {
+    background: #ffffff;
+    border-radius: 8px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.booking-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.car-details {
+    color: #b8d4f0;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.field label {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input, .select select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    border-radius: 6px;
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input:focus, .select select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 0.125em rgba(76, 175, 80, 0.25);
+}
+
+.book-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.book-button:hover {
+    background: #45a049;
+}
+
+@media (max-width: 768px) {
+    .booking-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .car-image-placeholder {
+        min-height: 200px;
+    }
+}
