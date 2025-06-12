@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="/node_modules/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/src/scss/css/admin.css">
+  <link rel="stylesheet" href="/src/scss/css/user.css">
+  <script src="/webpages/js/pageloader.js"></script>
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <img src="images/logo.png" alt="Logo">
+      </div>
+      <div class="sidebar-menu">
+        <a href="#" onclick="loadPage('user.html')" class="sidebar-item active">
+          <span class="icon"><i class="fas fa-user"></i></span>
+          <span>Account</span>
+        </a>
+        <a href="#" onclick="loadPage('Notification.html')" class="sidebar-item">
+          <span class="icon"><i class="fas fa-bell"></i></span>
+          <span>Notification</span>
+        </a>
+        <a href="#" onclick="loadPage('rental.html')" class="sidebar-item">
+          <span class="icon"><i class="fas fa-key"></i></span>
+          <span>Rental</span>
+        </a>
+        <a href="#" onclick="loadPage('settings.html')" class="sidebar-item">
+          <span class="icon"><i class="fas fa-cog"></i></span>
+          <span>Settings</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="main-content"></div>
+
+  </div>
+
+  <script>
+    function loadPage(page) {
+      fetch(page)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('main-content').innerHTML = html;
+        })
+        .catch(err => console.error('Page load error:', err));
+    }
+
+    // Load default page
+    window.onload = () => loadPage('default.html');
+  </script>
+</body>
+</html>
