@@ -1,0 +1,114 @@
+<div class="app-container">
+  <main class="main-content">
+    <div class="content-container">
+      <h1 class="title">Vehicles</h1>
+      
+      <div class="vehicles-container" id="vehicles-container">
+        <?php
+          // Include PHP to display existing vehicles
+          include 'php/display-vehicles.php';
+        ?>
+        
+        <!-- Static example vehicles -->
+        <div class="vehicle-card">
+          <div class="vehicle-image">
+            <img src="images/porsche.jpg" alt="Porsche 911 GT3RS">
+          </div>
+          <div class="vehicle-details">
+            <h3 class="vehicle-title">Porsche 911 GT3RS</h3>
+            <div class="vehicle-info">
+              <div class="info-item">
+                <i class="fas fa-gas-pump"></i>
+                <span class="info-label">Fuel Type:</span>
+                <span class="info-value">Petrol</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-id-card"></i>
+                <span class="info-label">Plate No:</span>
+                <span class="info-value">CVN507</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span class="info-label">Mileage:</span>
+                <span class="info-value">9.0km</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-check-circle"></i>
+                <span class="info-label">Availability:</span>
+                <span class="info-value availability-pending">Pending</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-cogs"></i>
+                <span class="info-label">Transmission:</span>
+                <span class="info-value">Auto</span>
+              </div>
+            </div>
+          </div>
+          <div class="vehicle-actions">
+            <a href="modify-vehicles.html?id=1" class="button is-info view-details-btn">
+              <span>View Details</span>
+              <span class="icon">
+                <i class="fas fa-circle-check"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="vehicle-card">
+          <div class="vehicle-image">
+            <img src="images/porsche.jpg" alt="Porsche 911 GT3RS">
+          </div>
+          <div class="vehicle-details">
+            <h3 class="vehicle-title">Porsche 911 GT3RS</h3>
+            <div class="vehicle-info">
+              <div class="info-item">
+                <i class="fas fa-gas-pump"></i>
+                <span class="info-label">Fuel Type:</span>
+                <span class="info-value">Petrol</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-id-card"></i>
+                <span class="info-label">Plate No:</span>
+                <span class="info-value">CVN507</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span class="info-label">Mileage:</span>
+                <span class="info-value">9.0km</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-check-circle"></i>
+                <span class="info-label">Availability:</span>
+                <span class="info-value availability-pending">Pending</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-cogs"></i>
+                <span class="info-label">Transmission:</span>
+                <span class="info-value">Auto</span>
+              </div>
+            </div>
+          </div>
+          <div class="vehicle-actions">
+            <a href="modify-vehicles.html?id=2" class="button is-info view-details-btn">
+              <span>View Details</span>
+              <span class="icon">
+                <i class="fas fa-circle-check"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Add Vehicle Card -->
+        <div class="vehicle-card add-vehicle-card">
+          <a href="modify-vehicles.html" class="add-vehicle-content">
+            <span>Add vehicles</span>
+            <span class="icon">
+              <i class="fas fa-circle-plus"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+

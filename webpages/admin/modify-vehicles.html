@@ -1,0 +1,123 @@
+<main class="main-content">
+  <div class="content-container">
+    <h1 class="title">Modify Vehicles</h1>
+    
+    <div class="form-container">
+      <form action="php/update-vehicle.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="vehicle_id" value="<?php echo isset($_GET['id']) ? $_GET['id'] : ''; ?>">
+        
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label">Car Name</label>
+              <div class="control">
+                <input class="input" type="text" name="car_name" placeholder="Enter car name" required>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label">Gas Type:</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select name="gas_type" required>
+                    <option value="">Select gas type</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Hybrid">Hybrid</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label">Car Name - subtext</label>
+              <div class="control">
+                <input class="input" type="text" name="car_subtext" placeholder="Enter car subtext">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label">Transmission</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select name="transmission" required>
+                    <option value="">Select transmission</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Manual">Manual</option>
+                    <option value="CVT">CVT</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label">Type:</label>
+              <div class="control">
+                <input class="input" type="text" name="vehicle_type" placeholder="Enter vehicle type" required>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label">Availability</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select name="availability" required>
+                    <option value="">Select availability</option>
+                    <option value="Available">Available</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Rented">Rented</option>
+                    <option value="Maintenance">Maintenance</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label">Plate Number</label>
+              <div class="control">
+                <input class="input" type="text" name="plate_number" placeholder="Enter plate number" required>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label">Mileage</label>
+              <div class="control">
+                <input class="input" type="text" name="mileage" placeholder="Enter mileage (e.g., 9.0km)" required>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Vehicle Image</label>
+          <div class="control">
+            <input class="input" type="file" name="vehicle_image" accept="image/*">
+          </div>
+        </div>
+
+        <div class="field is-grouped is-grouped-right">
+          <div class="control">
+            <button type="submit" class="button is-primary update-button">Update Profile</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

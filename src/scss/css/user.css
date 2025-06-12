@@ -2,8 +2,11 @@
 .main-content {
   flex: 1;
   padding: 30px;
-  background: linear-gradient(135deg, #0a2e52 0%, #0a1f38 100%);
   color: white;
+}
+
+#main-content{
+  background: linear-gradient(135deg, #0a2e52 0%, #0a1f38 100%);
 }
 
 /* Profile Header */

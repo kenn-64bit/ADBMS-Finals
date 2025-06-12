@@ -1,4 +1,9 @@
-/* Main Layout */
+@import url("admin-vehicles.css");
+@import url("booking-confirmation.css");
+@import url("modify-vehicles.css");
+@import url("admin.css");
+@import url("user.css");
+
 body {
   margin: 0;
   padding: 0;

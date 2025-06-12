@@ -1,0 +1,80 @@
+<main class="main-content">
+  <div class="content-container">
+    <h1 class="title">Booking Confirmation</h1>
+    
+    <!-- Add New Booking Form -->
+    <div class="add-booking-form">
+      <form action="php/add-booking.php" method="POST" class="booking-form">
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" name="vehicle" placeholder="Vehicle" required>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" name="customer" placeholder="Customer Name" required>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="date" name="date" required>
+              </div>
+            </div>
+          </div>
+          <div class="column is-narrow">
+            <div class="field">
+              <div class="control">
+                <button type="submit" class="button is-primary">Add Booking</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="table-container">
+      <table class="table is-fullwidth booking-table">
+        <thead>
+          <tr>
+            <th>Vehicle</th>
+            <th>Customer</th>
+            <th>Date</th>
+            <th>Confirm Booking</th>
+            <th>Cancel Booking</th>
+          </tr>
+        </thead>
+        <tbody id="booking-table-body">
+          <?php
+            // Include PHP to display existing bookings
+            include 'php/display-bookings.php';
+          ?>
+          <tr>
+            <td>Porsche 911 GT3RS</td>
+            <td>ERICK MAN VINCE</td>
+            <td>2023-06-15</td>
+            <td>
+              <form action="php/confirm-booking.php" method="POST" style="display: inline;">
+                <input type="hidden" name="booking_id" value="1">
+                <button type="submit" class="button is-success is-small">Confirm</button>
+              </form>
+            </td>
+            <td>
+              <form action="php/cancel-booking.php" method="POST" style="display: inline;">
+                <input type="hidden" name="booking_id" value="1">
+                <button type="submit" class="button is-danger is-small">Cancel</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+

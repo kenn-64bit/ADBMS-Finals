@@ -7,26 +7,27 @@
   <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="/node_modules/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="/src/scss/css/admin.css">
-  <link rel="stylesheet" href="/src/scss/css/user.css">
-  <script src="/webpages/js/pageloader.js"></script>
+  <script src="/webpages/js/pageloader.js defer"></script>
 </head>
 <body>
   <div class="admin-container">
     <!-- Sidebar -->
     <div class="sidebar">
       <div class="sidebar-logo">
-        <img src="images/logo.png" alt="Logo">
+        <a href="#" onclick="loadPage('default.html')" class="sidebar-item">
+          <img src="images/logo.png" alt="Logo">
+        </a>
       </div>
       <div class="sidebar-menu">
-        <a href="#" onclick="loadPage('user.html')" class="sidebar-item active">
+        <a href="#" onclick="loadPage('user.html')" class="sidebar-item">
           <span class="icon"><i class="fas fa-user"></i></span>
           <span>Account</span>
         </a>
-        <a href="#" onclick="loadPage('Notification.html')" class="sidebar-item">
-          <span class="icon"><i class="fas fa-bell"></i></span>
-          <span>Notification</span>
+        <a href="#" onclick="loadPage('booking-confirmation.html')" class="sidebar-item">
+          <span class="icon"><i class="fas fa-user"></i></span>
+          <span>Booking</span>
         </a>
-        <a href="#" onclick="loadPage('rental.html')" class="sidebar-item">
+        <a href="#" onclick="loadPage('admin-vehicles.html')" class="sidebar-item">
           <span class="icon"><i class="fas fa-key"></i></span>
           <span>Rental</span>
         </a>
@@ -51,7 +52,7 @@
         .catch(err => console.error('Page load error:', err));
     }
 
-    // Load default page
+  
     window.onload = () => loadPage('default.html');
   </script>
 </body>

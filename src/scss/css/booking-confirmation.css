@@ -1,0 +1,88 @@
+/* Global Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex-grow: 1;
+  background-color: #0a3049;
+  color: white;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+/* Add Booking Form */
+.add-booking-form {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.booking-form .input {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 12px;
+  height: auto;
+}
+
+.booking-form .button {
+  height: 100%;
+}
+
+/* Table Styles */
+.table-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.booking-table {
+  width: 100%;
+  color: white;
+  background-color: transparent;
+}
+
+.booking-table th {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  text-align: left;
+}
+
+.booking-table td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.booking-table .button {
+  border: none;
+  font-weight: bold;
+}
