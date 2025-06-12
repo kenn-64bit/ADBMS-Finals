@@ -10,6 +10,12 @@ body {
   min-height: 100vh;
 }
 
+#main-content {
+  flex: 1;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+}
+
 /* Sidebar Styles */
 .sidebar {
   width: 230px;
