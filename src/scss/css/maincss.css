@@ -9,7 +9,7 @@ body {
 }
 
 .hero-section {
-    background: url(/images/back.jpg);
+    background: url(/images/cars.jpeg);
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -19,7 +19,7 @@ body {
 }
 
 .hero-content {
-    text-align: center;
+    text-align: start;
     max-width: 600px;
     margin: 0 auto;
 }
