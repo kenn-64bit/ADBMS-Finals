@@ -1,3 +1,5 @@
+@import url("homepage.css");
+@import url("info-card.css");
 
 :root {
     --primary-blue: #1e3a5f;
@@ -145,13 +147,6 @@ body {
     display: block;
 }
 
-.footer-section {
-    background: var(--dark-blue);
-    color: white;
-    padding: 3rem 0 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
 .navbar {
     background: coral;
     position: sticky;
@@ -178,6 +173,50 @@ body {
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
+}
+
+.footer {
+    background-color: #0a1419;
+    padding: 3rem 1.5rem;
+    color: white;
+}
+
+.footer-logo {
+    margin-bottom: 1rem;3
+}
+
+.footer-description {
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+    color: white;
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-contact a {
+    color: white;
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-contact {
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-contact {
+    text-align: left;
+    margin-top: 2rem;
+    }
+    
+    .footer-links {
+    margin-top: 2rem;
+    }
 }
 
 .btn-primary:hover {
@@ -242,19 +281,6 @@ body {
     .faq-content {
         padding: 0 1rem 1rem;
         font-size: 0.9rem;
-    }
-    
-    .footer-section {
-        padding: 2rem 0 1rem;
-    }
-    
-    .footer-section .columns {
-        text-align: center;
-    }
-    
-    .footer-section .column.has-text-right {
-        text-align: center !important;
-        margin-top: 1rem;
     }
     
     .image-placeholder {
@@ -330,11 +356,6 @@ body {
         padding-right: 1.5rem !important;
     }
     
-    .footer-section .container {
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
-    }
-    
     .vehicle-card {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
@@ -377,11 +398,6 @@ body {
         padding-right: 1rem !important;
     }
     
-    .footer-section .container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-    
     .vehicle-card {
         margin-left: 0;
         margin-right: 0;
@@ -397,16 +413,6 @@ body {
         margin-right: 0;
     }
     
-    /* Ensure footer links have proper spacing on mobile */
-    .footer-section .is-flex a {
-        margin-right: 1rem !important;
-        margin-bottom: 0.5rem;
-    }
-    
-    .footer-section .is-flex {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 }
 
 /* Navbar mobile styles */

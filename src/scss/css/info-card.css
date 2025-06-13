@@ -1,0 +1,113 @@
+
+/* Info Section Styles */
+.info-section {
+    width: 100%;
+    padding: 2rem;
+}
+
+/* Card Layout */
+.info-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+/* Left Side - Image Placeholder */
+.image-placeholder-column {
+    background-color: white;
+    padding: 0;
+}
+
+.image-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 500px;
+    background-color: white;
+}
+
+.placeholder-content {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Right Side - Content */
+.info-content-column {
+    background-color: #7a7a7a;
+    padding: 0;
+}
+
+.info-content {
+    padding: 3rem;
+}
+
+/* Reliability Cards */
+.reliability-columns {
+    gap: 1rem;
+}
+
+.reliability-card {
+    background-color: white;
+    border-radius: 8px;
+    height: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+    background-color: #f5f5f5;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container i {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .info-card {
+        margin: 1rem;
+    }
+    
+    .columns.is-mobile {
+        flex-direction: column;
+    }
+    
+    .image-placeholder {
+        min-height: 300px;
+    }
+    
+    .info-content {
+        padding: 2rem;
+    }
+    
+    .reliability-columns {
+        flex-direction: column;
+    }
+    
+    .reliability-columns .column {
+        padding: 0.5rem 0;
+    }
+    
+    .reliability-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* For larger screens, maintain aspect ratio */
+@media screen and (min-width: 1024px) {
+    .info-card {
+        max-width: 80%;
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Component</title>
+  <!-- Local Bulma CSS -->
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <!-- Local Font Awesome CSS -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <style>
+    /* Custom Footer Styles */
+    .footer {
+      background-color: #0a1419;
+      padding: 3rem 1.5rem;
+      color: white;
+    }
+    
+    .footer-logo {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-description {
+      max-width: 400px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links a {
+      color: white;
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .footer-contact a {
+      color: white;
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .footer-contact {
+      text-align: right;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .footer-contact {
+        text-align: left;
+        margin-top: 2rem;
+      }
+      
+      .footer-links {
+        margin-top: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <!-- Logo and Description -->
+        <div class="column is-4">
+          <div class="footer-logo">
+            <i class="fas fa-car" style="font-size: 3rem;"></i>
+          </div>
+          <p class="footer-description">
+            Lorem ipsum dolor sit amet consectetur. Eget nulla risus arcu velit placerat scelerisque sociis sed dui.
+          </p>
+        </div>
+        
+        <!-- Navigation Links -->
+        <div class="column is-4">
+          <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">AboutUs</a>
+            <a href="#">Vehicles</a>
+            <a href="#">Support</a>
+          </div>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="column is-4">
+          <div class="footer-contact">
+            <a href="#">Contacts</a>
+            <a href="mailto:example@gmail.com">example@gmail.com</a>
+            <a href="tel:09692131256">09692131256</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
